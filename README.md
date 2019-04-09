@@ -28,11 +28,6 @@ command depends on your present working directory), then please note that contex
    an invite that they can accept either via email or by visiting the repository's website 
    on GitHub. **After accepting the invite,** the new group member should clone the repository
    via the the "SSH" URL under "Quick setup" on the repository's GitHub website.
-   
-1. If you wish, you can create a copy of your `cs1302-ce27` directory and call it `cs1302-ce28`.
-   This copy will contain a copy of the local Git repository in `cs1302-ce28/.git` so you should
-   be able to push and pull it to GitHub. Please note that changing the directory name on Nike
-   does not change the repository name on GitHub.
 
 1. Once each group member has completed the Getting Started steps, 
    pick an ordering for the group members (e.g., Group Member 1, Group Member 2, etc.).
