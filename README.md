@@ -1,4 +1,4 @@
-# cs1302-ce28 More Paired Algorithm Analysis
+# cs1302-ce28 More Paired Sorting Algorithm Analysis
 
 In this class exercise, students will continue with their implementation 
 and timing analysis of different algorithms for sorting an array.
