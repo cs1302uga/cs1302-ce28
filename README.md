@@ -34,6 +34,8 @@ command depends on your present working directory), then please note that contex
    If a step is being performed by one group member, then everyone is expected
    to watch, pay attention, and take notes.
 
+<hr/>
+
 ## Exercise Steps
 
 For this next checkpoint, we will have you implement a simple sorting algorithm called
@@ -43,7 +45,7 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
 
 1. **Select Min Algo:** This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
    within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
-   The method iterates over the array from `lo` to `hi - 1` (inclusive) and finds the minimum element 
+   The method iterates over the array from `lo` to `hi` (inclusive) and finds the minimum element 
    according to the ordering induced by the comparator (i.e., calling `c.compare`), then swaps that
    element with the element as index `lo`. 
    Here is the signature for the method:
@@ -146,8 +148,62 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
       
 **CHECKPOINT**
 
-1. TODO WRITE
+<hr/>
 
+For this next checkpoint, we will have you implement a simple sorting algorithm called
+[Quicksort](https://en.wikipedia.org/wiki/Quicksort). There are many different ways to
+explain the execution of this algorithm. We will take the approach of breaking up the
+algorithm into two methods, `partition` and `quickSort` that work together to sort an array.
+
+1. **Partition Algo:** This method takes an array, three valid index positions `lo`, `pivot`, and 
+   `hi` (all inclusive) within the array such that `lo <= pivot <= hi` and a `Comparator` that is 
+   used to perform comparisions. The method records the element at `array[pivot]` then iterates over
+   the array from `lo` to `hi` (inclusive), performing swaps in such a way that all values less than
+   or equal to the recorded value are to left of that value in the range and all values greater
+   than the recorded value are to the right of that value in the range. The process potentially causes 
+   the position of the recorded value to change, so the method returns the new index of the recorded
+   value. Here is the signature for the method:
+   
+   ```java
+   public static <T> int partition(T[] array, int lo, int pivot, int hi, Comparator<T> c)
+   ```
+   
+   Here is the pseudo code for the algorithm:
+   
+   ```
+   algorithm partition(A, lo, hi) is
+       pivot := A[hi]
+       i := lo
+       for j := lo to hi - 1 do
+           if A[j] < pivot then
+               swap A[i] with A[j]
+               i := i + 1
+       swap A[i] with A[hi]
+       return i
+   ```
+   
+   1. Here is an example of before and after calling `partition(array, 0, 1, 4, Integer::compareTo)`
+      on an array with elements `[ 2, 3, 1, 4, 5 ]`:
+      
+      ```java
+      TODO
+      ```
+      
+   1. Here is another example ...
+   
+   This method gets its name from the idea that it breaks up the array into two "partitions" on
+   either side of the pivot value in the specified range (i.e., from `lo` to `hi`). After a call to
+   `partition`, **the element and the index position returned by the method is guaranteed to be**
+   **in its correct sorted order within the range.**
+
+1. As a group, pick a **DRIVER.**, then the have the **DRIVER** implement the `partition` method
+   in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
+   the swaps. Be sure to include some code in the `main` method to test the 
+   implementation. Once your group is confident that the code compiles and runs correctly,
+   have the **DRIVER** stage and commit `QuickSort.java` to their local repository, then
+   push the changes up to the repository on GitHub. Everyone else should pull the changes
+   after that.
+   
 **NOT A CHECKPOINT**
 
 <hr/>
