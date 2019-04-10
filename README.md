@@ -76,7 +76,7 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
    specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
    **the smallest value in the range is guaranteed to be at index `lo`.**
 
-1. As a group, pick a **DRIVER.**, then the have the **DRIVER** implement the `selectMin` method
+1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** implement the `selectMin` method
    in `SelectionSort.java`. You may want to implement a static `swap` method to help you perform
    the swaps. Be sure to include some code in the `main` method to test the 
    implementation. Once your group is confident that the code compiles and runs correctly,
@@ -86,8 +86,8 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
 
 1. **Selection Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
    within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
-   The method simply calls `selectMin(array, lo, array.length - 1)` for all valid `lo` values **in order**
-   except for `array.length - 1`. Here is the signature for the method:
+   The method simply calls `selectMin(array, i, hi)` for all valid `i` values starting with `lo`, 
+   **in order**, except for `array.length - 1`. Here is the signature for the method:
 
    ```java
    public static <T> void selectionSort(T[] array, int lo, int hi, Comparator<T> c)
@@ -122,7 +122,7 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
       selectionSort(array, 0, 4, Integer::compareTo);
       System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
       ```
-1. As a group, pick a _new_ **DRIVER.**, then the have the **DRIVER** implement the `selectionSort` 
+1. As a group, pick a _new_ **DRIVER.** (no repeats), then the have the **DRIVER** implement the `selectionSort` 
    method in `SelectionSort.java`. Be sure to include some code in the `main` method to test the 
    implementation. Once your group is confident that the code compiles and runs correctly,
    have the **DRIVER** stage and commit `SelectionSort.java` to their local repository, then
@@ -154,6 +154,12 @@ For this next checkpoint, we will have you implement a simple sorting algorithm 
 [Quicksort](https://en.wikipedia.org/wiki/Quicksort). There are many different ways to
 explain the execution of this algorithm. We will take the approach of breaking up the
 algorithm into two methods, `partition` and `quickSort` that work together to sort an array.
+
+1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** create the skeleton code
+   for a basic driver class called `cs1302.sorting.QuickSort` (we'll write the algorithm in 
+   there later), ensuring that the package statement is correct and the file compiles and 
+   runs using Maven. Then, stage and commit the change to your local repository 
+   **and push those changes to GitHub**.
 
 1. **Partition Algo:** This method takes an array, three valid index positions `lo`, `pivot`, and 
    `hi` (all inclusive) within the array such that `lo <= pivot <= hi` and a `Comparator` that is 
@@ -218,14 +224,44 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    **in its correct sorted position within the range.** Everything to left is less or equal to the 
    pivot value and everything to the right is greater than.
 
-1. As a group, pick a **DRIVER.**, then the have the **DRIVER** implement the `partition` method
-   in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
+1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** implement the `partition` 
+   method in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
    the swaps. Be sure to include some code in the `main` method to test the 
    implementation. Once your group is confident that the code compiles and runs correctly,
    have the **DRIVER** stage and commit `QuickSort.java` to their local repository, then
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
    
+1. **Quicksort Algo:** This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
+   within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
+   The method simply calls `partition(array, lo, pivot, hi)` to partition the array into two parts
+   on either side of the new pivot index returned by `partition`, then sorts both sides recursively.
+   Here is the signature for the method:
+
+   ```java
+   public static <T> void quickSort(T[] array, int lo, int hi, Comparator<T> c)
+   ```
+
+   To sort an entire array of integers referred to by `array`, for example, you might call:
+   
+   ```java
+   quickSort(array, 0, array.length - 1, Integer::compareTo);
+   ```
+   
+   Before you can call `partition`, you need to pick an initial pivot index. There are multiple
+   strategies for doing this. The hope is that whatever strategy you pick, the call to `partition`
+   will split the range roughly in half (i.e., the new pivot index will be in the middle of the
+   range):
+   
+   * **Midpoint:** Let `pivot = hi / 2 - lo / 2`. 
+   
+   * **Median of Three:** Let `pivot` be the median of `lo`, `hi`, and the midpoint `hi / 2 - lo / 2`.
+   
+   * **Randomized:** Let `pivot` be a random integer in the range `lo` to `hi` (both inclusive).
+   
+   In practice, the randomized version performs better *on average* than the other two techniques, 
+   however, it is a little harder to analyze.
+
 **NOT A CHECKPOINT**
 
 <hr/>
