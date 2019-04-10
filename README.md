@@ -248,7 +248,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    quickSort(array, 0, array.length - 1, Integer::compareTo);
    ```
    
-   Before you can call `partition`, you need to pick an initial pivot index. There are multiple
+   Before you can call `partition` in `quickSort`, you need to pick an initial pivot index. There are multiple
    strategies for doing this. The hope is that whatever strategy you pick, the call to `partition`
    will split the range roughly in half (i.e., the new pivot index will be in the middle of the
    range):
@@ -262,10 +262,22 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    In practice, the randomized version performs better *on average* than the other two techniques, 
    however, it is a little harder to analyze.
 
-**NOT A CHECKPOINT**
+1. View the condensed, graphical version of your Git log using `git adog`.
 
-<hr/>
+**CHECKPOINT**
 
+1. In your notes, write down the source code for `partition`, then derive the
+   timing functions for two different algorithm analyses of the **Partition Algo**. Here,
+   let the problem size be defined as `n = hi - lo + 1`. 
+   
+   1. **Count Swaps:** What is `T(n)` for a call to `partition` if the set of key processing steps includes
+      only swap operations? Include the diagram for your derivation. 
+      
+   1. **Count Comparisons:** What is `T(n)` for a call to `partition` if the set of key processing steps includes
+      only comparison operations (i.e., calls to `c.compare`)? Include the diagram
+      for your derivation. 
+      
+**CHECKPOINT**
 
 <hr/>
 
