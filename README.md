@@ -171,30 +171,52 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    Here is the pseudo code for the algorithm:
    
    ```
-   algorithm partition(A, lo, hi) is
-       pivot := A[hi]
+   algo partition(A, lo, pivot, hi) is
+       swap A[pivot] with A[hi]
        i := lo
        for j := lo to hi - 1 do
-           if A[j] < pivot then
+           if A[j] < a[hi] then
                swap A[i] with A[j]
                i := i + 1
        swap A[i] with A[hi]
        return i
    ```
    
-   1. Here is an example of before and after calling `partition(array, 0, 1, 4, Integer::compareTo)`
-      on an array with elements `[ 2, 3, 1, 4, 5 ]`:
+   1. Here is an example of before and after calling `partition(array, 0, 2, 4, Integer::compareTo)`
+      on an array with elements `[ 1, 3, 2, 4, 5 ]`:
       
       ```java
-      TODO
+      System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
+      int newPivot = partition(array, 0, 2, 4, Integer::compareTo);
+      System.out.println(Arrays.toString(array)); // [ 1, 2, 5, 4, 3 ]
+      System.out.println(newPivot);               // 1
       ```
       
-   1. Here is another example ...
+   1. Here is an example of before and after calling `partition(array, 0, 1, 4, Integer::compareTo)`
+      on an array with elements `[ 1, 3, 2, 4, 5 ]`:
+      
+      ```java
+      System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
+      int newPivot = partition(array, 0, 1, 4, Integer::compareTo);
+      System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
+      System.out.println(newPivot);               // 2
+      ```
+      
+   1. Here is another example of before and after calling `partition(array, 0, 0, 5, Integer::compareTo)`
+      on an array with elements `[ 6, 11, 2, 4, 17, 5 ]`:
+      
+      ```java
+      System.out.println(Arrays.toString(array)); // [ 6, 11, 2, 4, 17, 5 ]
+      int newPivot = partition(array, 0, 0, 5, Integer::compareTo);
+      System.out.println(Arrays.toString(array)); // [ 5, 2, 4, 6, 17, 11 ]
+      System.out.println(newPivot);               // 3
+      ```
    
    This method gets its name from the idea that it breaks up the array into two "partitions" on
    either side of the pivot value in the specified range (i.e., from `lo` to `hi`). After a call to
-   `partition`, **the element and the index position returned by the method is guaranteed to be**
-   **in its correct sorted order within the range.**
+   `partition`, **the element at the index position returned by the method is guaranteed to be**
+   **in its correct sorted position within the range.** Everything to left is less or equal to the 
+   pivot value and everything to the right is greater than.
 
 1. As a group, pick a **DRIVER.**, then the have the **DRIVER** implement the `partition` method
    in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
