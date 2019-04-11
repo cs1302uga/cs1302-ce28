@@ -255,7 +255,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    
    * **Midpoint:** Let `pivot = hi / 2 - lo / 2`. 
    
-   * **Median of Three:** Let `pivot` be the median of `lo`, `hi`, and the midpoint `hi / 2 - lo / 2`.
+   * **Median of Three:** Let `pivot` be the median of `lo`, `hi`, and the midpoint `hi / 2 + lo / 2`.
    
    * **Randomized:** Let `pivot` be a random integer in the range `lo` to `hi` (both inclusive).
    
