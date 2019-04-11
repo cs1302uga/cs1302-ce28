@@ -262,6 +262,13 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    In practice, the randomized version performs better *on average* than the other two techniques, 
    however, it is a little harder to analyze.
 
+1. As a group, pick a _new_ **DRIVER.**, then the have the **DRIVER** implement the `quickSort` 
+   method in `QuickSort.java`. Be sure to include some code in the `main` method to test the 
+   implementation. Once your group is confident that the code compiles and runs correctly,
+   have the **DRIVER** stage and commit `QuickSort.java` to their local repository, then
+   push the changes up to the repository on GitHub. Everyone else should pull the changes
+   after that.
+   
 1. View the condensed, graphical version of your Git log using `git adog`.
 
 **CHECKPOINT**
