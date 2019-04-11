@@ -253,7 +253,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    will split the range roughly in half (i.e., the new pivot index will be in the middle of the
    range):
    
-   * **Midpoint:** Let `pivot = hi / 2 - lo / 2`. 
+   * **Midpoint:** Let `pivot = hi / 2 + lo / 2`. 
    
    * **Median of Three:** Let `pivot` be the median of `lo`, `hi`, and the midpoint `hi / 2 + lo / 2`.
    
