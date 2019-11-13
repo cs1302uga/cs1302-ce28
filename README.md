@@ -4,6 +4,13 @@ In this class exercise, students will continue with their implementation
 and timing analysis of different algorithms for sorting an array.
 Code and notes will be shared between group members via a private Git repository. 
 
+## Course-Specific Learning Outcomes
+* **LO3.d:** Apply pair-programming principles in a software-based project.
+* **LO5.a:** Utilize a version control tool such as Git or Subversion to store 
+and update source code in a multi-programmer software solution.
+* **LO6.c:** (Partial) Implement, analyze, and assess combinations of searching/sorting 
+algorithms such as linear search, binary search, quadratic sorts, and linearithmic sorts.
+
 ## References and Prerequisites
 
 * [Setting up your own GitHub Account](https://github.com/cs1302uga/cs1302-tutorials/blob/master/github-setup.md)
@@ -20,7 +27,7 @@ command depends on your present working directory), then please note that contex
 
 ### Getting Started
 
-1. **This exercise picks up from the end of [`cs1302-ce27`](https://github.com/cs1302uga/cs1302-ce27/).** 
+1. **This exercise picks up from the end of [`cs1302-ce27`](https://github.com/cs1302uga/cs1302-ce27.5/).** 
    If your group did not complete it, then you should do that now.  
 
 1. **If you have a new group member,** then please add them as a collaborator via the
@@ -43,12 +50,13 @@ For this next checkpoint, we will have you implement a simple sorting algorithm 
 explain the execution of this algorithm. We will take the approach of breaking up the
 algorithm into two methods, `selectMin` and `selectionSort` that work together to sort an array.
 
-1. **Select Min Algo:** This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
-   within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
-   The method iterates over the array from `lo` to `hi` (inclusive) and finds the minimum element 
-   according to the ordering induced by the comparator (i.e., calling `c.compare`), then swaps that
-   element with the element as index `lo`. 
-   Here is the signature for the method:
+**Select Min Algo:** This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
+within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions. 
+The method iterates over the array from `lo` to `hi` (inclusive) and finds the minimum element 
+according to the ordering induced by the comparator (i.e., calling `c.compare`), then swaps that
+element with the element as index `lo`. 
+
+Here is the signature for the method:
    
    ```java
    public static <T> void selectMin(T[] array, int lo, int hi, Comparator<T> c)
@@ -72,9 +80,9 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
       System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
       ```
    
-   This method gets its name from the idea that it repeatedly selects a minimum in the 
-   specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
-   **the smallest value in the range is guaranteed to be at index `lo`.**
+This method gets its name from the idea that it repeatedly selects a minimum in the 
+specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
+**the smallest value in the range is guaranteed to be at index `lo`.**
 
 1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** implement the `selectMin` method
    in `SelectionSort.java`. You may want to implement a static `swap` method to help you perform
@@ -84,26 +92,26 @@ algorithm into two methods, `selectMin` and `selectionSort` that work together t
    push the changes up to the repository on GitHub. Everyone else should pull the changes
    after that.
 
-1. **Selection Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
-   within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
-   The method simply calls `selectMin(array, i, hi)` for all valid `i` values starting with `lo`, 
-   **in order**, except for `array.length - 1`. Here is the signature for the method:
+**Selection Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
+within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
+The method simply calls `selectMin(array, i, hi)` for all valid `i` values starting with `lo`, 
+**in order**, except for `array.length - 1`. Here is the signature for the method:
 
    ```java
    public static <T> void selectionSort(T[] array, int lo, int hi, Comparator<T> c)
    ```
 
-   To sort an entire array of integers referred to by `array`, for example, you might call:
+To sort an entire array of integers referred to by `array`, for example, you might call:
    
    ```java
    selectionSort(array, 0, array.length - 1, Integer::compareTo);
    ```
    
-   This method gets its name from the fact that uses repeated calls `selectMin` in order to sort the array. 
-   Visually, the algorithm works by breaking up the array into two subsequences: sorted and unsorted.
-   Initially, the sorted sequence contains a single element (i.e., the element as index `lo`) and the 
-   unsorted sequence is the remaining elements in the array. After each call to `selectMin`, we know that 
-   the smallest value in the range is guaranteed to be at the `lo` index passed to `selectMin`.
+This method gets its name from the fact that uses repeated calls `selectMin` in order to sort the array. 
+Visually, the algorithm works by breaking up the array into two subsequences: sorted and unsorted.
+Initially, the sorted sequence contains a single element (i.e., the element as index `lo`) and the 
+unsorted sequence is the remaining elements in the array. After each call to `selectMin`, we know that 
+the smallest value in the range is guaranteed to be at the `lo` index passed to `selectMin`.
    
    1. Here is a trace of the algorithm, one row for each call to `selectMin`:
    
