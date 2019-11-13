@@ -27,7 +27,7 @@ command depends on your present working directory), then please note that contex
 
 ### Getting Started
 
-1. **This exercise picks up from the end of [`cs1302-ce27`](https://github.com/cs1302uga/cs1302-ce27.5/).** 
+1. **This exercise picks up from the end of [`cs1302-ce27.5`](https://github.com/cs1302uga/cs1302-ce27.5/).** 
    If your group did not complete it, then you should do that now.  
 
 1. **If you have a new group member,** then please add them as a collaborator via the
