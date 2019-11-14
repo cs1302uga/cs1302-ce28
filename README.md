@@ -1,5 +1,7 @@
 # cs1302-ce28 More Paired Sorting Algorithm Analysis
 
+![Approved for: Fall 2019](https://img.shields.io/badge/Approved%20for-Fall%202019-brightgreen)
+
 In this class exercise, students will continue with their implementation 
 and timing analysis of different algorithms for sorting an array.
 Code and notes will be shared between group members via a private Git repository. 
