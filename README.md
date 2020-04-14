@@ -193,14 +193,14 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
    void selectMin(array, lo, hi, c) {
        // REMEMBER, n = hi - lo + 1
        // REPLACE: WITH INSIDE OF YOUR selectMin METHOD
-   } // bubble
+   } // selectMin
    ```
    
    ```java
    void selectionSort(array, lo, hi, c)
        // REMEMBER, n = hi - lo + 1
        // REPLACE: WITH INSIDE OF YOUR selectionSort METHOD
-   } // bubble
+   } // selectionSort
    ```
    ````
    
@@ -382,9 +382,25 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
 
 ### Checkpoint 6 Steps
 
-1. In your notes, write down the source code for `partition`, then derive the
-   timing functions for two different algorithm analyses of the **Partition Algo**. Here,
-   let the problem size be defined as `n = hi - lo + 1`. 
+1. **GROUP MEMBER 1:** Open your `NOTES.md` file and add the following to the end:
+
+   ````
+
+   ## Partition Algo
+   
+   ```java
+   void partition(array, lo, pivot, hi, c) {
+       // REMEMBER, n = hi - lo + 1
+       // REPLACE: WITH INSIDE OF YOUR partition METHOD
+   } // partition
+   ```
+   
+   ````
+   
+   In this file, replace the comments labeled `REPLACE` with the body of your `partition` method.
+
+   In this file, derive the timing functions for two different algorithm analyses of the **Partition Algo**. 
+   Here, let the problem size be defined as `n = hi - lo + 1`. Use the following as a guide:
    
    1. **Count Swaps:** What is `T(n)` for a call to `partition` if the set of key processing steps includes
       only swap operations? Include the diagram for your derivation. 
@@ -392,7 +408,17 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    1. **Count Comparisons:** What is `T(n)` for a call to `partition` if the set of key processing steps includes
       only comparison operations (i.e., calls to `c.compare`)? Include the diagram
       for your derivation. 
-      
+   
+1. **GROUP MEMBER 1:** Once your group is confident that your analysis is correct,
+   stage and commit `NOTES.md` to your local repository
+   with tag `"checkpoint-6"`, then **push the changes** up to GitHub.
+   
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+   
+1. **EVERYONE:** Look at the `NOTES.md` file on GitHub.
+
+<hr/>
+
 ![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-6-success?style=for-the-badge)
 
 <hr/>
