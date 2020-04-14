@@ -1,6 +1,8 @@
 # cs1302-ce28 More Paired Sorting Algorithm Analysis
 
 ![Approved for: Fall 2019](https://img.shields.io/badge/Approved%20for-Fall%202019-brightgreen)
+<!--![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
+![Instruction: Online](https://img.shields.io/badge/Instruction-Online-important)-->
 
 In this class exercise, students will continue with their implementation 
 and timing analysis of different algorithms for sorting an array.
@@ -141,7 +143,7 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
    
 1. View the condensed, graphical version of your Git log using `git adog`.
 
-**CHECKPOINT**
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-1-success?style=for-the-badge)
 
 1. In your notes, write down the source code for `selectMin` and `selectionSort`, then derive the
    timing functions for two different algorithm analyses of the **Selection Sort Algo**. Here,
@@ -156,7 +158,7 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
       for your derivation. As `selectionSort` calls
       `selectMin`, this will involve mathematical function composition.
       
-**CHECKPOINT**
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-2-success?style=for-the-badge)
 
 <hr/>
 
@@ -281,7 +283,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    
 1. View the condensed, graphical version of your Git log using `git adog`.
 
-**CHECKPOINT**
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-3-success?style=for-the-badge)
 
 1. In your notes, write down the source code for `partition`, then derive the
    timing functions for two different algorithm analyses of the **Partition Algo**. Here,
@@ -294,7 +296,41 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
       only comparison operations (i.e., calls to `c.compare`)? Include the diagram
       for your derivation. 
       
-**CHECKPOINT**
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-4-success?style=for-the-badge)
+
+<hr/>
+
+### Submission Steps
+
+**Each student needs to individually submit their own work.**
+
+1. Create a plain text file called `SUBMISSION.md` directly inside this exercise
+   directory with the following information:
+
+   1. Your name and UGA ID number;
+   1. Collaborator names, if any; and
+   1. The weekly code (listed with the exercise on eLC).
+   
+   Here is an example:
+   
+   ```
+   1. Sally Smith (811-000-999)
+   2. Collaborators: Joe Allen, Stacie Mack
+   3. Weekly Code: replace-with-actual-code
+   ```
+
+1. Add and commit `SUBMISSION.md`. Also, do a final check to ensure your code 
+   passes the `checkstyle` audit, then stage and commit all changes, if needed.
+
+1. Change into the parent directory and use the `submit` command to submit this exercise to `cs1302a`:
+   
+   ```
+   $ submit cs1302-ce28 cs1302a
+   ```
+     
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished-Submission-success?style=for-the-badge)
 
 <hr/>
 
