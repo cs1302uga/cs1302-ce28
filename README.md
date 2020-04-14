@@ -29,29 +29,46 @@ logged into the Nike server.
 command that you typed to make the related action happen. If context is necessary (e.g., the 
 command depends on your present working directory), then please note that context as well.
 
+![Extra Credit](ecop.png)
+
+We will **double the points** that you earn for this exercise if you meet the following criteria:
+
+1. Met with another student in the Spring 2020 CSCI 1302 online (e.g., via Zoom) to complete
+   the pair programming aspects of this exercise; and
+   
+1. Completed all checkpoints.
+
+The Git log in your submitted exercise will help us determine if you met these criteria.
+
 ### Getting Started
 
 1. **This exercise picks up from the end of [`cs1302-ce27`](https://github.com/cs1302uga/cs1302-ce27/).** 
    If you did not complete it, then you should do that now.  
 
-1. **If you have a new group member,** then please add them as a collaborator via the
+1. To get the most out of this exercise, we encourage you to
+   **form a group of exactly two people for this exercise.**
+   
+   * **Working in a group?** Some steps in this exercise need be done by each group member individually.
+   If a step is being performed by one group member, then everyone is expected
+   to watch, pay attention, and take notes.
+   
+   * **Working by yourself?** That's okay. If the instructions ask you to switch, then don't switch.
+   
+1. **If you are working with a new person,** then please add them as a collaborator via the
    repository's GitHub website (click "Settings" → "Collaborators"). This will send them
    an invite that they can accept either via email or by visiting the repository's website 
    on GitHub. **After accepting the invite,** the new group member should clone the repository
    via the the "SSH" URL under "Quick setup" on the repository's GitHub website.
 
-1. Once each group member has completed the Getting Started steps, 
-   pick an ordering for the group members (e.g., Group Member 1, Group Member 2, etc.).
-   If a step is being performed by one group member, then everyone is expected
-   to watch, pay attention, and take notes.
-
 <hr/>
 
 ## Exercise Steps
 
-For this next checkpoint, we will have you implement a simple sorting algorithm called
-[Selection Sort](https://en.wikipedia.org/wiki/Selection_sort). There are many different ways to
-explain the execution of this algorithm. We will take the approach of breaking up the
+### Checkpoint 1 Steps
+
+For this checkpoint, we will have you implement a simple sorting algorithm called
+[Selection Sort](https://en.wikipedia.org/wiki/Selection_sort). **There are many different ways to
+explain the execution of this algorithm.** We will take the approach of breaking up the
 algorithm into two methods, `selectMin` and `selectionSort` that work together to sort an array.
 
 **Select Min Algo:** This method takes an array, two valid index positions `lo` and `hi` (both inclusive) 
@@ -88,13 +105,25 @@ This method gets its name from the idea that it repeatedly selects a minimum in 
 specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
 **the smallest value in the range is guaranteed to be at index `lo`.**
 
-1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** implement the `selectMin` method
+1. **GROUP MEMBER 1:** implement the `selectMin` method
    in `SelectionSort.java`. You may want to implement a static `swap` method to help you perform
    the swaps. Be sure to include some code in the `main` method to test the 
    implementation. Once your group is confident that the code compiles and runs correctly,
-   have the **DRIVER** stage and commit `SelectionSort.java` to their local repository, then
-   push the changes up to the repository on GitHub. Everyone else should pull the changes
-   after that.
+   verify that your code passes the `checkstyle` audit, then stage and commit `SelectionSort.java` 
+   to your local repository with tag `"checkpoint-1"`, then
+   push the changes up to the repository on GitHub. 
+   
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+
+1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
+
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-1-success?style=for-the-badge)
+
+<hr/>
+
+### Checkpoint 2 Steps
 
 **Selection Sort Algo**: This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
 within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
@@ -134,20 +163,56 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
       selectionSort(array, 0, 4, Integer::compareTo);
       System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
       ```
-1. As a group, pick a _new_ **DRIVER.** (no repeats), then the have the **DRIVER** implement the `selectionSort` 
-   method in `SelectionSort.java`. Be sure to include some code in the `main` method to test the 
-   implementation. Once your group is confident that the code compiles and runs correctly,
-   have the **DRIVER** stage and commit `SelectionSort.java` to their local repository, then
-   push the changes up to the repository on GitHub. Everyone else should pull the changes
-   after that.
+1. **GROUP MEMBER 2:** `selectionSort` method in `SelectionSort.java`. 
+
+1. **GROUP MEMBER 2:** Write some code in the `main` method to test the implementation of `selectionSort`.
+   Make sure you test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices.
+   Once your group is confident that the code compiles and runs correctly, make sure your code passes the
+   `checkstyle` audit, then stage and commit `SelectionSort.java` to your local repository with tag
+   `"checkpoint-2"`, then **push the changes** up to GitHub.
+
+1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository, if needed.
    
-1. View the condensed, graphical version of your Git log using `git adog`.
+1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
+   
+<hr/>
 
-![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-1-success?style=for-the-badge)
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-2-success?style=for-the-badge)
 
-1. In your notes, write down the source code for `selectMin` and `selectionSort`, then derive the
-   timing functions for two different algorithm analyses of the **Selection Sort Algo**. Here,
-   let the problem size be defined as `n = hi - lo + 1`. 
+<hr/>
+
+### Checkpoint 3 Steps
+
+1. **GROUP MEMBER 1:** Open your `NOTES.md` file and add the following to the end of your Bubble Sort analysis:
+
+   ````
+
+   ## Selection Sort Algo
+   
+   ```java
+   void selectMin(array, lo, hi, c) {
+       // REMEMBER, n = hi - lo + 1
+       // REPLACE: WITH INSIDE OF YOUR selectMin METHOD
+   } // bubble
+   ```
+   
+   ```java
+   void selectionSort(array, lo, hi, c)
+       // REMEMBER, n = hi - lo + 1
+       // REPLACE: WITH INSIDE OF YOUR selectionSort METHOD
+   } // bubble
+   ```
+   ````
+   
+   In this file, replace the comments labeled `REPLACE` with the bodies of your `selectMin` and `selectionSort`
+   methods.
+   
+   * In Emacs? Use `C-x 3` to open a second buffer, `C-x o` to move to the other buffer, then
+     `C-x f` to find/open the relevant `.java` file. Select and copy text as usual, then use
+     `C-x o` to move back to the first buffer to paste.
+   
+   In this file, derive timing functions for two different algorithm analyses of the **Selection Sort Algo**. 
+   Here, let the problem size be defined as `n = hi - lo + 1`. Use the following as a guide:
    
    1. What is `T(n)` for a call to `selectionSort` if the set of key processing steps includes
       only swap operations? Include the diagram for your derivation. As `selectionSort` calls
@@ -158,20 +223,26 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
       for your derivation. As `selectionSort` calls
       `selectMin`, this will involve mathematical function composition.
       
-![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-2-success?style=for-the-badge)
+1. **GROUP MEMBER 1:** Once your group is confident that your analysis is correct,
+   stage and commit `NOTES.md` to your local repository
+   with tag `"checkpoint-3"`, then **push the changes** up to GitHub.
+   
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+   
+1. **EVERYONE:** Look at the `NOTES.md` file on GitHub.
 
 <hr/>
 
-For this next checkpoint, we will have you implement a simple sorting algorithm called
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-3-success?style=for-the-badge)
+
+<hr/>
+
+### Checkpoint 4 Steps
+
+For this checkpoint, we will have you implement a simple sorting algorithm called
 [Quicksort](https://en.wikipedia.org/wiki/Quicksort). There are many different ways to
 explain the execution of this algorithm. We will take the approach of breaking up the
 algorithm into two methods, `partition` and `quickSort` that work together to sort an array.
-
-1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** create the skeleton code
-   for a basic driver class called `cs1302.sorting.QuickSort` (we'll write the algorithm in 
-   there later), ensuring that the package statement is correct and the file compiles and 
-   runs using Maven. Then, stage and commit the change to your local repository 
-   **and push those changes to GitHub**.
 
 1. **Partition Algo:** This method takes an array, three valid index positions `lo`, `pivot`, and 
    `hi` (all inclusive) within the array such that `lo <= pivot <= hi` and a `Comparator` that is 
@@ -236,14 +307,32 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    **in its correct sorted position within the range.** Everything to left is less or equal to the 
    pivot value and everything to the right is greater than.
 
-1. As a group, pick a **DRIVER.** (no repeats), then the have the **DRIVER** implement the `partition` 
-   method in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
-   the swaps. Be sure to include some code in the `main` method to test the 
-   implementation. Once your group is confident that the code compiles and runs correctly,
-   have the **DRIVER** stage and commit `QuickSort.java` to their local repository, then
-   push the changes up to the repository on GitHub. Everyone else should pull the changes
-   after that.
+1. **GROUP MEMBER 1:** create the skeleton code for a basic driver class called 
+   `cs1302.sorting.QuickSort` (we'll write the algorithm in there later), ensuring that the 
+   package statement is correct and the file compiles and 
+   runs using Maven. 
    
+1. **GROUP MEMBER 1:** implement the `partition` 
+   method in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
+   the swaps. 
+   
+1. **GROUP MEMBER 1:** Write some code in the `main` method to test the 
+   implementation. Once your group is confident that the code compiles and runs correctly, 
+   make sure your code passes the `checkstyle` audit, stage and commit `QuickSort.java` 
+   to your local repository with tag `"checkpoint-4"`, then **push the changes** to GitHub.
+
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+   
+1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
+
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-4-success?style=for-the-badge)
+
+<hr/>
+      
+### Checkpoint 5 Steps
+
 1. **Quicksort Algo:** This method also takes an array, two valid index positions `lo` and `hi` (both inclusive) 
    within the array such that `lo <= hi` and a `Comparator` that is used to perform comparisions.
    The method simply calls `partition(array, lo, pivot, hi)` to partition the array into two parts
@@ -274,16 +363,24 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    In practice, the randomized version performs better *on average* than the other two techniques, 
    however, it is a little harder to analyze.
 
-1. As a group, pick a _new_ **DRIVER.**, then the have the **DRIVER** implement the `quickSort` 
-   method in `QuickSort.java`. Be sure to include some code in the `main` method to test the 
-   implementation. Once your group is confident that the code compiles and runs correctly,
-   have the **DRIVER** stage and commit `QuickSort.java` to their local repository, then
-   push the changes up to the repository on GitHub. Everyone else should pull the changes
-   after that.
-   
-1. View the condensed, graphical version of your Git log using `git adog`.
+1. **GROUP MEMBER 2:** Implement the `quickSort` method in `QuickSort.java`. 
 
-![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-3-success?style=for-the-badge)
+1. **GROUP MEMBER 2:** Write some code in the `main` method to thoroughly test your 
+   implementation. Once your group is confident that the code compiles and runs correctly, verify
+   that your code passes the `checkstyle` audit, then stage and commit `QuickSort.java` to your 
+   local repository with tag `"checkpoint-5"', then **push the changes** up to the repository on GitHub. 
+   
+1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository, if needed.
+   
+1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
+
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-5-success?style=for-the-badge)
+
+<hr/>
+
+### Checkpoint 6 Steps
 
 1. In your notes, write down the source code for `partition`, then derive the
    timing functions for two different algorithm analyses of the **Partition Algo**. Here,
@@ -296,7 +393,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
       only comparison operations (i.e., calls to `c.compare`)? Include the diagram
       for your derivation. 
       
-![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-4-success?style=for-the-badge)
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-6-success?style=for-the-badge)
 
 <hr/>
 
