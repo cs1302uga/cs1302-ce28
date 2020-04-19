@@ -83,23 +83,23 @@ Here is the signature for the method:
    public static <T> void selectMin(T[] array, int lo, int hi, Comparator<T> c)
    ```
    
-   1. Here is an example of before and after calling `selectMin(array, 0, 4, Integer::compareTo)`
-      on an array with elements `[ 2, 3, 1, 4, 5 ]`:
+   * Here is an example of before and after calling `selectMin(array, 0, 4, Integer::compareTo)`
+     on an array with elements `[ 2, 3, 1, 4, 5 ]`:
       
-      ```java
-      System.out.println(Arrays.toString(array)); // [ 2, 3, 1, 4, 5 ]
-      selectMin(array, 0, 4, Integer::compareTo);
-      System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
-      ```
+     ```java
+     System.out.println(Arrays.toString(array)); // [ 2, 3, 1, 4, 5 ]
+     selectMin(array, 0, 4, Integer::compareTo);
+     System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
+     ```
       
-   1. Here is another example before and after calling `selectMin(array, 1, 4, Integer::compareTo)`
-      on an array with elements `[ 1, 3, 2, 4, 5 ]` :
+   * Here is another example before and after calling `selectMin(array, 1, 4, Integer::compareTo)`
+     on an array with elements `[ 1, 3, 2, 4, 5 ]` :
       
-      ```java
-      System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
-      selectMin(array, 1, 4, Integer::compareTo);
-      System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
-      ```
+     ```java
+     System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
+     selectMin(array, 1, 4, Integer::compareTo);
+     System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
+     ```
    
 This method gets its name from the idea that it repeatedly selects a minimum in the 
 specified range (i.e., from `lo` to `hi`). After a call to `selectMin`, 
@@ -146,23 +146,23 @@ Initially, the sorted sequence contains a single element (i.e., the element as i
 unsorted sequence is the remaining elements in the array. After each call to `selectMin`, we know that 
 the smallest value in the range is guaranteed to be at the `lo` index passed to `selectMin`.
    
-   1. Here is a trace of the algorithm, one row for each call to `selectMin`:
+   * Here is a trace of the algorithm, one row for each call to `selectMin`:
    
-      | Before              | Call                         | After (Sorted `/` Unorted) |
-      |---------------------|------------------------------|-----------------------------|
-      | `[ 2, 5, 1, 3, 4 ]` | `selectMin(array, 0, 4, c);` | `[ 1/ 5, 2, 3, 4 ]`         |  
-      | `[ 1, 5, 2, 3, 4 ]` | `selectMin(array, 1, 4, c);` | `[ 1, 2/ 5, 3, 4 ]`         |
-      | `[ 1, 2, 5, 3, 4 ]` | `selectMin(array, 2, 4, c);` | `[ 1, 2, 3/ 5, 4 ]`         |
-      | `[ 1, 2, 3, 5, 4 ]` | `selectMin(array, 3, 4, c);` | `[ 1, 2, 3, 4/ 5 ]`         |
+     | Before              | Call                         | After (Sorted `/` Unorted) |
+     |---------------------|------------------------------|-----------------------------|
+     | `[ 2, 5, 1, 3, 4 ]` | `selectMin(array, 0, 4, c);` | `[ 1/ 5, 2, 3, 4 ]`         |  
+     | `[ 1, 5, 2, 3, 4 ]` | `selectMin(array, 1, 4, c);` | `[ 1, 2/ 5, 3, 4 ]`         |
+     | `[ 1, 2, 5, 3, 4 ]` | `selectMin(array, 2, 4, c);` | `[ 1, 2, 3/ 5, 4 ]`         |
+     | `[ 1, 2, 3, 5, 4 ]` | `selectMin(array, 3, 4, c);` | `[ 1, 2, 3, 4/ 5 ]`         |
       
-   1. Here is an example before and after calling `selectionSort(array, 0, 4, Integer::compareTo)`
-      on an array with elements `[ 5, 4, 2, 3, 1 ]`:
+   * Here is an example before and after calling `selectionSort(array, 0, 4, Integer::compareTo)`
+     on an array with elements `[ 5, 4, 2, 3, 1 ]`:
       
-      ```java
-      System.out.println(Arrays.toString(array)); // [ 5, 4, 2, 3, 1 ]
-      selectionSort(array, 0, 4, Integer::compareTo);
-      System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
-      ```
+     ```java
+     System.out.println(Arrays.toString(array)); // [ 5, 4, 2, 3, 1 ]
+     selectionSort(array, 0, 4, Integer::compareTo);
+     System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
+     ```
 1. **GROUP MEMBER 2:** `selectionSort` method in `SelectionSort.java`. 
 
 1. **GROUP MEMBER 2:** Write some code in the `main` method to test the implementation of `selectionSort`.
@@ -271,35 +271,35 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
        return i
    ```
    
-   1. Here is an example of before and after calling `partition(array, 0, 2, 4, Integer::compareTo)`
-      on an array with elements `[ 1, 3, 2, 4, 5 ]`:
+   * Here is an example of before and after calling `partition(array, 0, 2, 4, Integer::compareTo)`
+     on an array with elements `[ 1, 3, 2, 4, 5 ]`:
       
-      ```java
-      System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
-      int newPivot = partition(array, 0, 2, 4, Integer::compareTo);
-      System.out.println(Arrays.toString(array)); // [ 1, 2, 5, 4, 3 ]
-      System.out.println(newPivot);               // 1
-      ```
+     ```java
+     System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
+     int newPivot = partition(array, 0, 2, 4, Integer::compareTo);
+     System.out.println(Arrays.toString(array)); // [ 1, 2, 5, 4, 3 ]
+     System.out.println(newPivot);               // 1
+     ```
       
-   1. Here is an example of before and after calling `partition(array, 0, 1, 4, Integer::compareTo)`
-      on an array with elements `[ 1, 3, 2, 4, 5 ]`:
+   * Here is an example of before and after calling `partition(array, 0, 1, 4, Integer::compareTo)`
+     on an array with elements `[ 1, 3, 2, 4, 5 ]`:
       
-      ```java
-      System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
-      int newPivot = partition(array, 0, 1, 4, Integer::compareTo);
-      System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
-      System.out.println(newPivot);               // 2
-      ```
+     ```java
+     System.out.println(Arrays.toString(array)); // [ 1, 3, 2, 4, 5 ]
+     int newPivot = partition(array, 0, 1, 4, Integer::compareTo);
+     System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
+     System.out.println(newPivot);               // 2
+     ```
       
-   1. Here is another example of before and after calling `partition(array, 0, 0, 5, Integer::compareTo)`
-      on an array with elements `[ 6, 11, 2, 4, 17, 5 ]`:
-      
-      ```java
-      System.out.println(Arrays.toString(array)); // [ 6, 11, 2, 4, 17, 5 ]
-      int newPivot = partition(array, 0, 0, 5, Integer::compareTo);
-      System.out.println(Arrays.toString(array)); // [ 5, 2, 4, 6, 17, 11 ]
-      System.out.println(newPivot);               // 3
-      ```
+   * Here is another example of before and after calling `partition(array, 0, 0, 5, Integer::compareTo)`
+     on an array with elements `[ 6, 11, 2, 4, 17, 5 ]`:
+     
+     ```java
+     System.out.println(Arrays.toString(array)); // [ 6, 11, 2, 4, 17, 5 ]
+     int newPivot = partition(array, 0, 0, 5, Integer::compareTo);
+     System.out.println(Arrays.toString(array)); // [ 5, 2, 4, 6, 17, 11 ]
+     System.out.println(newPivot);               // 3
+     ```
    
    This method gets its name from the idea that it breaks up the array into two "partitions" on
    either side of the pivot value in the specified range (i.e., from `lo` to `hi`). After a call to
