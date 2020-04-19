@@ -112,7 +112,7 @@ specified range (i.e., from `lo` to `hi`). After a call to `selectMin`,
    implementation of `selectMin`. Make sure you
    test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices. The output
    of your program should describe the test cases that are executing by including at least: 
-      * the array contents
+      * the array contents before and after the call to `selectMin`
       * `hi`, `lo`
       * Descriptive text around the output describing what the user (TA or instructor) is seeing.
       
@@ -171,15 +171,21 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
      selectionSort(array, 0, 4, Integer::compareTo);
      System.out.println(Arrays.toString(array)); // [ 1, 2, 3, 4, 5 ]
      ```
-1. **GROUP MEMBER 2:** `selectionSort` method in `SelectionSort.java`. 
+1. **GROUP MEMBER 2:** Implement the `selectionSort` method in `SelectionSort.java`. 
 
-1. **GROUP MEMBER 2:** Write some code in the `main` method to test the implementation of `selectionSort`.
-   Make sure you test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices.
-   Once your group is confident that the code compiles and runs correctly, make sure your code passes the
-   `checkstyle` audit, then stage and commit `SelectionSort.java` to your local repository with tag
-   `"checkpoint-2"`, then **push the changes** up to GitHub.
+1. **GROUP MEMBER 2:** Write some code in the `main` method to test the implementation of `selectionSort`. 
+   You can most likely use your `selectMin` tests - just change them to do a full `selectionSort`. Make sure 
+   you test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices. The output
+   of your program should describe the test cases that are executing by including at least: 
+      * the array contents for each iteration of the algorithm
+      * `hi`, `lo`
+      * Descriptive text around the output describing what the user (TA or instructor) is seeing.
 
-1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository, if needed.
+1. Once your group is confident that the code compiles and runs correctly,
+   make sure your code passes the `checkstyle` audit, then stage and commit `SelectionSort.java` 
+   to your local repository with tag `"checkpoint-2"`, then **push the changes** up to GitHub. 
+   
+1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository.
    
 1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
    
@@ -191,7 +197,7 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
 
 ### Checkpoint 3 Steps
 
-1. **GROUP MEMBER 1:** Open your `NOTES.md` file and add the following to the end of your Bubble Sort analysis:
+1. **GROUP MEMBER 1:** Open your `NOTES.md` file and add the following to the end of your Bubble Sort analysis (from `ce27`):
 
    ````
 
@@ -228,14 +234,14 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
       
    1. What is `T(n)` for a call to `selectionSort` if the set of key processing steps includes
       only comparison operations (i.e., calls to `c.compare`)? Include the diagram
-      for your derivation. As `selectionSort` calls
-      `selectMin`, this will involve mathematical function composition.
+      for your derivation. As `selectionSort` calls`selectMin`, this will involve mathematical 
+      function composition.
       
 1. **GROUP MEMBER 1:** Once your group is confident that your analysis is correct,
    stage and commit `NOTES.md` to your local repository
    with tag `"checkpoint-3"`, then **push the changes** up to GitHub.
    
-1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
    
 1. **EVERYONE:** Look at the `NOTES.md` file on GitHub.
 
@@ -312,7 +318,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    This method gets its name from the idea that it breaks up the array into two "partitions" on
    either side of the pivot value in the specified range (i.e., from `lo` to `hi`). After a call to
    `partition`, **the element at the index position returned by the method is guaranteed to be**
-   **in its correct sorted position within the range.** Everything to left is less or equal to the 
+   **in its correct sorted position within the range.** Everything to left is less than or equal to the 
    pivot value and everything to the right is greater than.
 
 1. **GROUP MEMBER 1:** create the skeleton code for a basic driver class called 
@@ -320,16 +326,22 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    package statement is correct and the file compiles and 
    runs using Maven. 
    
-1. **GROUP MEMBER 1:** implement the `partition` 
-   method in `QuickSort.java`. You may want to implement a static `swap` method to help you perform
-   the swaps. 
+1. **GROUP MEMBER 1:** implement the `partition` method in `QuickSort.java`. You may want to implement 
+   a static `swap` method to help you perform the swaps. 
    
-1. **GROUP MEMBER 1:** Write some code in the `main` method to test the 
-   implementation. Once your group is confident that the code compiles and runs correctly, 
-   make sure your code passes the `checkstyle` audit, stage and commit `QuickSort.java` 
-   to your local repository with tag `"checkpoint-4"`, then **push the changes** to GitHub.
+1. **GROUP MEMBER 1:** Write some code in the `main` method of `QuickSort.java` to test the 
+   implementation of `partition`. Make sure you test a few different datatypes and vary the
+   starting (`lo`) and (`hi`) indices. The output of your program should describe the test cases
+   that are executing by including at least:
+      * the array contents before and after the call to `partition`
+      * the value for `pivot`, `hi`, and `lo`
+      * Descriptive text around the output describing what the user (TA or instructor) is seeing.
+      
+1. Once your group is confident that the code compiles and runs correctly,
+   make sure your code passes the `checkstyle` audit, then stage and commit `QuickSort.java` 
+   to your local repository with tag `"checkpoint-4"`, then **push the changes** up to GitHub. 
 
-1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
    
 1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
 
@@ -372,13 +384,19 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    however, it is a little harder to analyze.
 
 1. **GROUP MEMBER 2:** Implement the `quickSort` method in `QuickSort.java`. 
-
-1. **GROUP MEMBER 2:** Write some code in the `main` method to thoroughly test your 
-   implementation. Once your group is confident that the code compiles and runs correctly, verify
-   that your code passes the `checkstyle` audit, then stage and commit `QuickSort.java` to your 
-   local repository with tag `"checkpoint-5"', then **push the changes** up to the repository on GitHub. 
    
-1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository, if needed.
+1. **GROUP MEMBER 2:** Write some code in the `main` method to test the implementation of `quickSort`. Make sure 
+   you test a few different dataypes and vary the starting (`lo`) and ending (`hi`) indices. The output
+   of your program should describe the test cases that are executing by including at least: 
+      * the array contents before and after sorting
+      * `hi`, `lo`
+      * Descriptive text around the output describing what the user (TA or instructor) is seeing.
+
+1. Once your group is confident that the code compiles and runs correctly,
+   make sure your code passes the `checkstyle` audit, then stage and commit `QuickSort.java` 
+   to your local repository with tag `"checkpoint-5"`, then **push the changes** up to GitHub. 
+   
+1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository.
    
 1. **EVERYONE:** View the condensed, graphical version of your Git log using `git adog`.
 
@@ -421,7 +439,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    stage and commit `NOTES.md` to your local repository
    with tag `"checkpoint-6"`, then **push the changes** up to GitHub.
    
-1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository, if needed.
+1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
    
 1. **EVERYONE:** Look at the `NOTES.md` file on GitHub.
 
@@ -451,7 +469,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    ```
 
 1. Add and commit `SUBMISSION.md`. Also, do a final check to ensure your code 
-   passes the `checkstyle` audit, then stage and commit all changes, if needed.
+   passes the `checkstyle` audit, then stage and commit all changes.
 
 1. Change into the parent directory and use the `submit` command to submit this exercise to `cs1302a`:
    
