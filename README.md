@@ -117,7 +117,7 @@ specified range (i.e., from `lo` to `hi`). After a call to `selectMin`,
       
 1. Once your group is confident that the code compiles and runs correctly,
    make sure your code passes the `checkstyle` audit, then stage and commit `SelectionSort.java` 
-   to your local repository with tag `"checkpoint-1"`, then **push the changes** up to the repository 
+   to your local repository with tag `"28-checkpoint-1"`, then **push the changes** up to the repository 
    on GitHub. 
    
 1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
@@ -182,7 +182,7 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
 
 1. Once your group is confident that the code compiles and runs correctly,
    make sure your code passes the `checkstyle` audit, then stage and commit `SelectionSort.java` 
-   to your local repository with tag `"checkpoint-2"`, then **push the changes** up to GitHub. 
+   to your local repository with tag `"28-checkpoint-2"`, then **push the changes** up to GitHub. 
    
 1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository.
    
@@ -238,7 +238,7 @@ the smallest value in the range is guaranteed to be at the `lo` index passed to 
       
 1. **GROUP MEMBER 1:** Once your group is confident that your analysis is correct,
    stage and commit `NOTES.md` to your local repository
-   with tag `"checkpoint-3"`, then **push the changes** up to GitHub.
+   with tag `"28-checkpoint-3"`, then **push the changes** up to GitHub.
    
 1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
    
@@ -338,7 +338,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
       
 1. Once your group is confident that the code compiles and runs correctly,
    make sure your code passes the `checkstyle` audit, then stage and commit `QuickSort.java` 
-   to your local repository with tag `"checkpoint-4"`, then **push the changes** up to GitHub. 
+   to your local repository with tag `"28-checkpoint-4"`, then **push the changes** up to GitHub. 
 
 1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
    
@@ -393,7 +393,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
 
 1. Once your group is confident that the code compiles and runs correctly,
    make sure your code passes the `checkstyle` audit, then stage and commit `QuickSort.java` 
-   to your local repository with tag `"checkpoint-5"`, then **push the changes** up to GitHub. 
+   to your local repository with tag `"28-checkpoint-5"`, then **push the changes** up to GitHub. 
    
 1. **GROUP MEMBER 1:** Pull the changes to your local copy of the repository.
    
@@ -436,7 +436,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
    
 1. **GROUP MEMBER 1:** Once your group is confident that your analysis is correct,
    stage and commit `NOTES.md` to your local repository
-   with tag `"checkpoint-6"`, then **push the changes** up to GitHub.
+   with tag `"28-checkpoint-6"`, then **push the changes** up to GitHub.
    
 1. **GROUP MEMBER 2:** Pull the changes to your local copy of the repository.
    
@@ -473,7 +473,7 @@ algorithm into two methods, `partition` and `quickSort` that work together to so
 1. Change into the parent directory and use the `submit` command to submit this exercise to `cs1302a`:
    
    ```
-   $ submit cs1302-ce28 cs1302a
+   $ submit cs1302-ce27-ce28 cs1302a
    ```
      
 <hr/>
